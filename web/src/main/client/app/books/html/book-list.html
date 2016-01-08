@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<section>
+    <div flash-message="5000" ></div>
+
+    <p>Podaj tytuł książki:</p>
+    <input type="text" ng-model="prefix">
+    <button class="btn btn-primary" ng-click="search()">Szukaj</button>
+    <button class="btn btn-success" ng-click="addBook()">Dodaj książkę</button>
+
+    <table>
+        <tr>
+            <th>Tytuł</th>
+            <th>Autorzy</th>
+            <th>Usuń</th>
+            <th>Edutuj</th>
+        </tr>
+        <tr class="trForm" ng-repeat="book in books">
+            <td>{{ book.title }}</td>
+            <td>{{ book.authors }}</td>
+            <td>
+                <button class="btn btn-danger" ng-click="deleteBook(book.id)">Usuń</button>
+            </td>
+            <td>
+                <button class="btn btn-warning" ng-click="editBook(book)">Edytuj</button>
+            </td>
+        </tr>
+    </table>
+</section>
+</body>
+</html>

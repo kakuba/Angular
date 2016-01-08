@@ -1,0 +1,20 @@
+<div>
+    <form name="bookForm" novalidate>
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body">
+            <p>Tytuł:<br>
+			  <input type="text" name="btitle" ng-model="btitle" required>
+			  <span style="color:red" ng-show="bookForm.btitle.$dirty && bookForm.btitle.$invalid">
+			  <span ng-show="bookForm.btitle.$error.required">Brak tytułu.</span>
+			  </span>
+			</p>
+				<div ng-repeat="author in authorList">{{author.fname}} {{author.lname}}</div>
+        </div>
+        <div class="modal-footer">
+			<button class="btn btn-warning" ng-click="submit(bookForm)" ng-disabled="bookForm.btitle.$invalid">Zapisz</button>
+            <button class="btn btn-warning" ng-click="close()" >Zamknij</button>
+        </div>
+    </form>
+</div>

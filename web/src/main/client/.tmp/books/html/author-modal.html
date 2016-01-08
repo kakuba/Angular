@@ -1,0 +1,22 @@
+<div>
+    <form name="authorForm" novalidate>
+        <div class="modal-header">
+            <h3 class="modal-title">{{title}}</h3>
+        </div>
+        <div class="modal-body">
+            <p>Imię:<br>
+			  <input type="text" name="fname" ng-model="fname" required>
+			  <span style="color:red" ng-show="authorForm.fname.$dirty && authorForm.fname.$invalid">
+			  <span ng-show="authorForm.fname.$error.required">Brak imienia.</span>
+			  </span>
+			</p>
+            <p>Nazwisko:<br>
+			  <input type="text" name="lname" ng-model="lname" required>
+			  <span style="color:red" ng-show="authorForm.lname.$dirty && authorForm.lname.$invalid">
+			  <span ng-show="authorForm.lname.$error.required">Brak nazwiska.</span>
+			  </span>
+			</p>
+				<button class="btn btn-success" ng-click="submit(authorForm)" ng-disabled="authorForm.fname.$invalid || authorForm.lname.$invalid">Zapisz</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,1 @@
+angular.module("app.component2.templates", []).run(["$templateCache", function($templateCache) {$templateCache.put("component-2/html/dialog-b.html","<!DOCTYPE html><html><body><h2>Hello from Dialog B!</h2></body></html>");}]);
